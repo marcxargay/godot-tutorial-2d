@@ -10,10 +10,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func show_message(text):
+func show_message(text, isTemporary: bool = false):
 	$Message.text = text
 	$Message.show()
 	$MessageTimer.start()
+	if isTemporary: 
+		await get_tree().create_timer(2.0).timeout
+		$Message.hide()
 
 func show_game_over():
 	show_message("Game Over")
@@ -29,7 +32,6 @@ func update_score(score):
 	$ScoreLabel.text = str(score)
 	
 func _on_start_button_pressed():
-	print("start button pressed")
 	$StartButton.hide()
 	start_game.emit()
 

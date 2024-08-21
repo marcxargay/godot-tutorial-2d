@@ -25,7 +25,8 @@ func new_game():
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
 	$HUD.update_score(score)
-	$HUD.show_message("Get Ready")
+	$HUD.show_message("Get Ready", true)
+
 	
 
 func _on_score_timer_timeout() -> void:
@@ -37,7 +38,6 @@ func _on_start_timer_timeout() -> void:
 	$ScoreTimer.start()
 
 func _on_mobtimer_timeout() -> void:
-	print("mob timer timed out")
 	var mob = mob_scene.instantiate()
 	
 	var mob_spawn_location = $MobPath/MobSpawnLocation
