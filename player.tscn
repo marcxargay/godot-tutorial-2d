@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://0sb42akh3cm8"]
 
 [ext_resource type="Texture2D" uid="uid://y0fiqsjtfrmb" path="res://art/playerGrey_up1.png" id="1_bdrdm"]
-[ext_resource type="Script" path="res://player.gd" id="1_h50hk"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_h50hk"]
 [ext_resource type="Texture2D" uid="uid://b54klesjth1ed" path="res://art/playerGrey_up2.png" id="2_0yk5n"]
 [ext_resource type="Texture2D" uid="uid://drg5h3a5phit7" path="res://art/playerGrey_walk1.png" id="3_2ncoh"]
 [ext_resource type="Texture2D" uid="uid://ctewv2dgftwgi" path="res://art/playerGrey_walk2.png" id="4_tlucd"]
@@ -46,7 +46,5 @@ animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_mbsxi")
-
-[node name="Mob" type="RigidBody2D" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

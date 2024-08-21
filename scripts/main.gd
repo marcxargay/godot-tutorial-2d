@@ -20,7 +20,6 @@ func game_over() -> void:
 	$DeathSound.play()
 
 func new_game():
-	print("start game")
 	$Music.play()
 	score = 0
 	$Player.start($StartPosition.position)

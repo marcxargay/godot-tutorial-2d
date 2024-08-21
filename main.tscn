@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=4 uid="uid://cv8xvrhmqw7ud"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_1w13s"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_1w13s"]
 [ext_resource type="PackedScene" uid="uid://0sb42akh3cm8" path="res://player.tscn" id="2_cknha"]
 [ext_resource type="PackedScene" uid="uid://bpeyds52unojj" path="res://mob.tscn" id="2_yexth"]
 [ext_resource type="PackedScene" uid="uid://g4l6mocp77jq" path="res://hud.tscn" id="4_a3rwy"]
@@ -25,6 +25,14 @@ loop = true
 script = ExtResource("1_1w13s")
 mob_scene = ExtResource("2_yexth")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0662727, 0.0802867, 0.114809, 1)
+
 [node name="Player" parent="." instance=ExtResource("2_cknha")]
 
 [node name="Mobtimer" type="Timer" parent="."]
@@ -45,14 +53,6 @@ curve = SubResource("Curve2D_6f47v")
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
 
 [node name="HUD" parent="." instance=ExtResource("4_a3rwy")]
-
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.0662727, 0.0802867, 0.114809, 1)
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamOggVorbis_dff63")
